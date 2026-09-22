@@ -112,7 +112,7 @@ export default function App() {
   const isTablet = vw >= 640 && vw < 1024;
 
   useEffect(() => {
-    fetch("https://cdn.jsdelivr.net/gh/nubrakes-analytics/NuBrakes-Copilot@main/data/fact_nubrakes_technician_daily.json")
+    fetch("https://nubrakes-analytics.github.io/NuBrakes-Copilot/data/fact_technician_operations_daily.json")
       .then(r => { if (!r.ok) throw new Error(); return r.json(); })
       .then(d => { const arr = Array.isArray(d)?d:[]; setRawData(arr.length?arr:FALLBACK); setDataSource(arr.length?"live":"fallback"); })
       .catch(() => { setRawData(FALLBACK); setDataSource("fallback"); })
